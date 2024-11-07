@@ -6,7 +6,7 @@
 /*   By: vimafra- <vimafra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 13:18:29 by vimafra-          #+#    #+#             */
-/*   Updated: 2024/11/02 17:56:12 by vimafra-         ###   ########.fr       */
+/*   Updated: 2024/11/07 10:24:56 by vimafra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*ptr_dest;
 	unsigned char	*ptr_src;
-	size_t			i;
 
-	i = 0;
 	ptr_dest = (unsigned char *)(dest);
 	ptr_src = (unsigned char *)(src);
 	if (dest == NULL && src == NULL)

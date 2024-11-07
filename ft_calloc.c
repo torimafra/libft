@@ -6,7 +6,7 @@
 /*   By: vimafra- <vimafra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 13:36:09 by vimafra-          #+#    #+#             */
-/*   Updated: 2024/11/02 17:03:22 by vimafra-         ###   ########.fr       */
+/*   Updated: 2024/11/07 10:23:18 by vimafra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
-	size_t	i;
-
-	i = 0;
+	
 	if (nmemb * size > 2147483647)
 		return (NULL);
 	if ((int)(nmemb) < 0 || (int)(size) < 0)
