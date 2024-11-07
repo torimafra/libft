@@ -6,11 +6,13 @@
 /*   By: vimafra- <vimafra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 15:30:40 by vimafra-          #+#    #+#             */
-/*   Updated: 2024/10/15 11:34:49 by vimafra-         ###   ########.fr       */
+/*   Updated: 2024/11/07 10:59:41 by vimafra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Checa se c é um caractere printável de acordo com a tabela ASCII
 
 int	ft_isprint(int c)
 {

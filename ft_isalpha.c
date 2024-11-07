@@ -6,11 +6,13 @@
 /*   By: vimafra- <vimafra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 14:41:02 by vimafra-          #+#    #+#             */
-/*   Updated: 2024/10/15 11:33:03 by vimafra-         ###   ########.fr       */
+/*   Updated: 2024/11/07 10:57:56 by vimafra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Checa se c é letra
 
 int	ft_isalpha(int c)
 {

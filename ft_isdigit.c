@@ -6,11 +6,13 @@
 /*   By: vimafra- <vimafra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 15:16:14 by vimafra-          #+#    #+#             */
-/*   Updated: 2024/10/15 11:34:16 by vimafra-         ###   ########.fr       */
+/*   Updated: 2024/11/07 10:58:44 by vimafra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Checa se c é número
 
 int	ft_isdigit(int c)
 {

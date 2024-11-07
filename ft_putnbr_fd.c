@@ -6,11 +6,15 @@
 /*   By: vimafra- <vimafra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 10:08:24 by vimafra-          #+#    #+#             */
-/*   Updated: 2024/11/02 18:10:02 by vimafra-         ###   ########.fr       */
+/*   Updated: 2024/11/07 11:59:45 by vimafra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Tem como saída o inteiro ’n’ para o file descriptor especificado
+// n: o inteiro a ser escrito
+// fd: o file descriptor no qual o inteiro será escrito
 
 void	ft_putnbr_fd(int n, int fd)
 {
