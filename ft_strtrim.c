@@ -6,7 +6,7 @@
 /*   By: vimafra- <vimafra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:09:30 by vimafra-          #+#    #+#             */
-/*   Updated: 2024/11/07 14:55:54 by vimafra-         ###   ########.fr       */
+/*   Updated: 2024/11/11 18:48:09 by vimafra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 
 // Função adicional para buscar e remover os elementos de set a partir do final de s1, voltando
 // Retorna o index imediatamente anterior à última ocorrência de set em s1
-static unsigned int	last_index(char const *s1, char const *set)
+static int	last_index(char const *s1, char const *set)
 {
-	unsigned int	index;
+	int	index;
 	int				a;
 	size_t			b;
 
@@ -46,9 +46,9 @@ static unsigned int	last_index(char const *s1, char const *set)
 }
 
 // Função adicional para buscar e remover os elementos de set a partir do início de s1
-static unsigned int	first_index(char const *s1, char const *set)
+static int	first_index(char const *s1, char const *set)
 {
-	unsigned int	index;
+	int	index;
 	size_t			a;
 	size_t			b;
 
@@ -77,8 +77,8 @@ static unsigned int	first_index(char const *s1, char const *set)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char				*result;
-	unsigned int		last;
-	unsigned int		first;
+	int		last;
+	int		first;
 
 	first = first_index(s1, set);
 	last = last_index(s1, set);

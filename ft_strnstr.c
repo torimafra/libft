@@ -6,7 +6,7 @@
 /*   By: vimafra- <vimafra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 13:34:39 by vimafra-          #+#    #+#             */
-/*   Updated: 2024/11/07 14:38:54 by vimafra-         ###   ########.fr       */
+/*   Updated: 2024/11/11 18:47:03 by vimafra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return (NULL);
 	// Se o primeiro caractere de "little" não for encontrado em "big", ou se len for 0
 	if (ft_strchr(big_len, little[0]) == NULL || len == 0)
+	{
+		free(big_len);
 		return (NULL);
+	}
 	while (i_big < len)
 	{
 		// Procura o primeiro caracter de "little" em na big trimmada, avançando o index a cada iteração
@@ -47,9 +50,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 				// Compara little com big_len a partir do primeiro caracter de little encontrado nela, por "n = comprimento de little" bytes
 				// Se a comparação der zero, "little" inteira foi encontrada em "big"
 				ft_strncmp(little, big_loop, ft_strlen(little)) == 0)
+		{
+			free(big_len);
 			// Retorna o char * para a primeira ocorrência de little [0] em big, a partir do ponto que estamos do loop
 			return (ft_strchr(big + i_big, little[0]));
+		}
 		i_big++;
 	}
+	free(big_len);
 	return (NULL);
 }

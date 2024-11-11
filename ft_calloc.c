@@ -6,7 +6,7 @@
 /*   By: vimafra- <vimafra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 13:36:09 by vimafra-          #+#    #+#             */
-/*   Updated: 2024/11/07 10:55:55 by vimafra-         ###   ########.fr       */
+/*   Updated: 2024/11/11 18:38:58 by vimafra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 	
-	if (nmemb * size > 2147483647) // Checa se a multiplicação nmemb * size ultrapassa valor máximo do int 
+	if (nmemb == 0 || size == 0) // Checa se algum parâmetro passado é zero
+		return (malloc(0)); // Retorna ponteiro nulo
+	if (nmemb > (size_t)(-1) / size) // Checa se a multiplicação nmemb * size ultrapassa valor máximo do int
+	// O casting de -1 para size_t resulta no int max 
 		return (NULL); 
-	if ((int)(nmemb) < 0 || (int)(size) < 0) // Checa se algum dos parâmetros passados é negativo
-	// Size_t não admite valores negativos, para chegar se foi passado algo negativo precisa fazer casting para int
-		return (NULL);
 	ptr = malloc(nmemb * size); // Aloca a memória usando malloc()
 	if (ptr == NULL) // Proteção malloc
 		return (NULL);

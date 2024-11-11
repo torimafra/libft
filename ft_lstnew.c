@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vimafra- <vimafra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 11:58:40 by vimafra-          #+#    #+#             */
-/*   Updated: 2024/11/11 18:42:47 by vimafra-         ###   ########.fr       */
+/*   Created: 2024/11/07 15:18:41 by vimafra-          #+#    #+#             */
+/*   Updated: 2024/11/09 14:03:22 by vimafra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Aloca (with malloc(3)) e retorna uma nova string, que é o resultado da concatenação de ’s1’ e ’s2’
-
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstnew(void *content)
 {
-	char			*result;
+	t_list	*new_node;
 
-	if (!s1 || !s2)
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (new_node == NULL)
 		return (NULL);
-	result = (char *)malloc(((ft_strlen(s1) + \
-				ft_strlen(s2)) + 1) * sizeof(char));
-	if (result == NULL)
-		return (NULL);
-	ft_strlcpy(result, s1, ft_strlen(s1) + 1);
-	ft_strlcpy(result + ft_strlen(s1), s2, ft_strlen(s2) + 1);
-	return (result);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
 }
-

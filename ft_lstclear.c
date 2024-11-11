@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vimafra- <vimafra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 10:08:24 by vimafra-          #+#    #+#             */
-/*   Updated: 2024/11/11 18:41:24 by vimafra-         ###   ########.fr       */
+/*   Created: 2024/11/09 17:56:56 by vimafra-          #+#    #+#             */
+/*   Updated: 2024/11/10 17:03:27 by vimafra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Tem como saída o inteiro ’n’ para o file descriptor especificado
-// n: o inteiro a ser escrito
-// fd: o file descriptor no qual o inteiro será escrito
-
-static void	write_number(int n, int fd)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (n > 9)
-		write_number(n / 10, fd);
-	write(fd, &"0123456789"[n % 10], 1);
-}
+	t_list	*ptr;
+	t_list	*temp;
 
-void	ft_putnbr_fd(int n, int fd)
-{
-	if (n == -2147483648)
-	{
-		ft_putstr_fd("-2147483648", fd);
+	if (!*lst || !del)
 		return ;
-	}
-	if (n < 0)
+	ptr = *lst;
+	while (ptr != NULL)
 	{
-		write(fd, "-", 1);
-		n *= -1;
+		temp = ptr->next;
+		del(ptr->content);
+		free(ptr);
+		ptr = temp;
 	}
-	write_number(n, fd);
+	*lst = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: vimafra- <vimafra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 12:40:19 by vimafra-          #+#    #+#             */
-/*   Updated: 2024/11/07 11:42:11 by vimafra-         ###   ########.fr       */
+/*   Updated: 2024/11/09 14:31:30 by vimafra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	// O tipo unsigned char é frequentemente usado para representar um byte
 	// Ele tem um intervalo de valores de 0 a 255, o que corresponde exatamente ao intervalo de valores que um único byte pode armazenar
-	// Eliminando qualquer ambiguidade que poderia surgir se os bytes fossem interpretados como char
-	// Que pode ser tanto signed (-) quanto unsigned (+)
+	// Isso elimina qualquer ambiguidade que poderia surgir se os bytes fossem interpretados como char, que pode ser tanto signed (-) quanto unsigned (+)
 	// Ao forçar a interpretação como unsigned char, o comportamento da função se torna previsível em diferentes plataformas
 	ptr = (unsigned char *)(s);
 	temp_c = (unsigned char)(c);
