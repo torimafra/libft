@@ -6,7 +6,7 @@
 /*   By: vimafra- <vimafra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 13:34:39 by vimafra-          #+#    #+#             */
-/*   Updated: 2024/11/15 16:11:18 by vimafra-         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:27:57 by vimafra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,26 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	char			*big_loop;
 
 	i_big = 0;
-	if (!(*little))
-		return ((char *)(big));
-	if (len > ft_strlen(big) || (int)(len) < 0)
-		len = ft_strlen(big);
-	if (len == 0)
-		return (NULL);
-	while (i_big <= len)
+	if (!(*little)) // Se little for vazia
+		return ((char *)(big)); // Retorna big
+	if (len > ft_strlen(big) || (int)(len) < 0) // Se a len passada ultrapassar o tamanho de big ou for negativa
+		len = ft_strlen(big); // Ajusta para o tamanho de big
+	if (len == 0) // Se len for zero
+		return (NULL); // Retorna nulo
+	while (i_big <= len) // Enquanto o iterador for menor ou igual ao limite de len bytes
 	{
-		big_loop = ft_strchr(big + i_big, little[0]);
+		// "big + i_big" avança o ponteiro em big, tirando os elementos já percorridos
+		big_loop = ft_strchr(big + i_big, little[0]); // Procura a ocorrência do primeiro caracter de little em big
+		// Se encontrar, e o comprimento de little couber em big_loop até o limite de len
 		if (big_loop != NULL && (big_loop + ft_strlen(little)) <= &big[len] && \
+			// E se big_loop for igual a little pelo comprimento de little
 			ft_strncmp(little, big_loop, ft_strlen(little)) == 0)
+			// Retorna a string a partir desse ponto em que ela está no loop
 			return (big_loop);
+		// Se não, continua iterando por big
 		i_big++;
 	}
+	// Se não encontrar little em len bytes de big, retorna nulo
 	return (NULL);
 }
 

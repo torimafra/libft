@@ -6,7 +6,7 @@
 /*   By: vimafra- <vimafra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 09:35:39 by vimafra-          #+#    #+#             */
-/*   Updated: 2024/11/15 16:08:42 by vimafra-         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:20:44 by vimafra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ char	*ft_strchr(const char *s, int c)
 	unsigned int	i;
 
 	i = 0;
+	// C é passado como int, então fazemos o casting para char pra evitar problemas
 	if ((char)(c) == '\0') // Se o caracter c procurado for o caracter nulo
 		return ((char *)(&s[ft_strlen(s)])); // Retorna ponteiro para o caracter nulo de s
 	while (s[i] != '\0') // Percorre a string
